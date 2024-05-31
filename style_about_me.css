@@ -1,0 +1,165 @@
+*{
+    font-family: "Raleway";
+    font-size: 18px;
+}
+
+body{
+    background-color: lightslategray;
+}
+
+main *{
+    margin: 20px;
+}
+
+h1{
+    font-size: 50px;
+    color: blanchedalmond;
+}
+
+h2{
+    font-size: 50px;
+    color: #29467f;
+}
+
+.title h1{
+    background-image: url(./images/about/lostin_lalin-tWjZw3dmifY-unsplash.jpg);
+    background-size: cover;
+    margin: 1rem;
+    padding: 1rem;
+    color: plum;
+    font-size: 5rem;
+    transition: ease 0.3s;
+}
+
+.title h1:hover{
+    color: transparent;
+    -webkit-text-stroke: 0.3px blanchedalmond;
+}
+
+.button{
+    display: inline-block;
+    font-family: "Zilla Slab";
+    font-size: 15px;
+    margin-top: 0.5rem;
+    padding: 10px 30px;
+    color: aliceblue;
+    background-color: #9c759c;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+  
+.button:hover{
+    transform: scale(1.1);
+    color: blanchedalmond;
+    background-color: #29467f;
+    box-shadow: 5px 10px 30px rgb(132, 172, 203, 0.4);
+    padding: 10px 30px;
+}
+  
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: aliceblue;
+}
+  
+li a{
+    color: #29467f;
+    margin-left: 0;
+    display: block;
+    text-decoration: none;
+    padding: 7px;
+}
+
+li a:hover{
+    background-color: #555;
+    color: white;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e0e0e;
+    animation-name: box_color;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 5;
+}
+  
+.animated_fig{
+    animation-name: bounce;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+}
+  
+@keyframes bounce{
+    0%, 100%{transform: translateX(0); opacity: 1;}
+    33%{transform: translateX(-20px); opacity: 0.8;}
+    66%{transform: translateX(20px); opacity: 0.8;}
+}
+
+@keyframes box_color{
+    0%{background-color: rgba(26, 162, 180, 0.4);}
+    25%{background-color: rgba(28, 26, 180, 0.4);}
+    50%{background-color: rgba(182, 53, 118, 0.4);}
+    100%{background-color: rgba(26, 180, 95, 0.4);}
+}
+  
+
+.about{
+    background-image: url(./images/about/lostin_lalin-tWjZw3dmifY-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    color: aliceblue;
+}
+
+.about_content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.content{
+    width: 500px;
+}
+
+.socials a{
+    background-image: url(./images/alex-lvrs-Md6_qA-BMis-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    margin: 10px;
+    transition: ease 0.3s;
+}
+
+.socials a:hover{
+    transform: scale(1.1);
+}
+
+.interests{
+    padding-bottom: 20px;
+}
+
+#contact a{
+    text-decoration: none;
+    color: rgba(182, 53, 118, 0.4);
+    background-color: bisque;
+}
+
+#contact > button{
+    background-color: #9c759c;
+    border-style: none;
+    transition: ease 0.3s;
+}
+
+#contact > button:hover{
+    transform: translateX(25px);
+}

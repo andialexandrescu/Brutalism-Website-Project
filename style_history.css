@@ -1,0 +1,244 @@
+*{
+    font-family: "Raleway";
+    font-size: 18px;
+}
+  
+
+body{
+    background-color: lightslategray;
+}
+
+main > *:not(.timeline), figure, table{ /* nu se doreste ca timeline-ul sa aiba o margine */
+    margin: 20px;
+}
+
+h2{
+    font-size: 50px;
+    color: #29467f;
+    background-color: rgba(25, 132, 176, 0.5);
+}
+
+h3{
+    font-size: 25px;
+    color: plum;
+    padding: 30px;
+}
+
+h4{
+    font-size: 22px;
+    background-color: blanchedalmond;
+    margin: 0;
+}
+
+.title h1{
+    background-image: url(./images/about/lostin_lalin-tWjZw3dmifY-unsplash.jpg);
+    background-size: cover;
+    margin: 1rem;
+    padding: 1rem;
+    color: blanchedalmond;
+    font-size: 5rem;
+    transition: ease 0.3s;
+}
+
+.title h1:hover{
+    color: transparent;
+    -webkit-text-stroke: 0.3px plum;
+}
+
+/* buton index.html */
+.button{
+    display: inline-block;
+    font-family: "Zilla Slab";
+    font-size: 15px;
+    margin-top: 0.5rem;
+    padding: 10px 30px;
+    color: aliceblue;
+    background-color: #9c759c;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+  
+.button:hover{
+    transform: scale(1.1);
+    color: blanchedalmond;
+    background-color: #29467f;
+    box-shadow: 5px 10px 30px rgb(132, 172, 203, 0.4);
+    padding: 10px 30px;
+}
+
+/* meniu navigatie */
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: aliceblue;
+}
+  
+nav li a{
+    color: #29467f;
+    margin-left: 0;
+    display: block;
+    text-decoration: none;
+    padding: 7px;
+}
+
+nav li a:hover{
+    background-color: #555;
+    color: white;
+}
+
+/* tabel coresp fiecarui arhitect */
+table{
+    font-family: Georgia, serif;
+    width: 100%;
+    max-width: 900px;
+    table-layout: auto;
+    border-collapse: collapse; /* pt a evita crearea unui border dublu */
+}
+
+table, th, td{
+    border: 1px solid rgba(25, 132, 176, 0.5);
+    padding: 8px;
+}
+
+th{
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+  
+tr:nth-child(odd){
+    background-color: rgba(25, 132, 176, 0.1);
+}
+
+tr:hover{
+    background-color: lightgray;
+}
+
+/* asezare in pagina */
+.container_box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.content{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+}
+
+.key_facts{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+    margin-top: 120px;
+    margin-right: 55px;
+}
+
+.quote{
+    color: #333;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin-left: 45px;
+    margin-top: 50px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.key_facts th, .key_facts td{
+  font-family: "Zilla Slab";
+}
+
+.content img{
+    width: 100%;
+    height: auto;
+}
+
+figcaption{
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 98.89%; /* problema pe care ar trebui sa o rezolv */
+}
+
+/* https://reintech.io/blog/creating-horizontal-timeline-with-css */
+/* timeline orizontal */
+.timeline{
+    margin: 50px;
+    position: relative;
+}
+
+.timeline h5{
+    color: blanchedalmond;
+}
+
+.timeline p{
+    color: aliceblue;
+}
+  
+.timeline li{
+    float: left; /* pt continuitatea evenimentelor din timeline */
+    width: 13.5%; /* spatiere intre elem li */
+    position: relative;
+    text-align: center;
+    list-style: none;
+}
+  
+.timeline li:before{ /* se vor crea pseudo elemente de tip eveniment din timeline pe baza fiecarui element din lista */
+    content: ""; /* as putea sa fac un counter care e incrementat, dar in acest caz nu are nicio functionalitate */
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid plum;
+    border-radius: 30%;
+    margin: 0 auto 10px auto;
+    background-color: blanchedalmond;
+}
+  
+.timeline li:after{ /* crearea unui pseudo element dupa fiecare element al listei (se afla la stanga fiecarui elem li)*/
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 15px; /* pt pozitionarea la jumatatea evenimentelor */
+    left: -50%;
+    z-index: -1; /* linia generata se va afla in spatele celorlalte pseudo elemente cu un z-index mai mare; layers */
+    background-color: #9c759c;
+}
+
+.timeline li:first-child:after{ /* primul element nu are linie la stanga */
+    content: none;
+}
+
+.timeline:after{ /* proprietatea de float: left; de la fiecare eveniment din timeline s-ar pastra, insemnand ca si pozitionarea arhitectilor care ar urma dupa cel curent e afectata; evitare problema */
+    content: ""; /* un tabel nou vid */
+    display: table;
+    clear: left;
+}
+
+.timeline_artworks{
+    background-image: url(./images/about/lostin_lalin-tWjZw3dmifY-unsplash.jpg);
+    background-size: cover;
+    /* pt  a evita ca imaginea de fundal sa fie deasupra elem pseudo generat cu :after */
+    position: relative;
+    z-index: -2;
+}
+
+/* pt a vizualiza cum arata fiecare eveniment */
+/*.timeline li:hover{ 
+    transform: scale(1.3);
+}*/
+
+
+

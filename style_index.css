@@ -1,0 +1,431 @@
+main *{
+  font-family: "Raleway";
+  font-size: 18px;
+  margin: 20px;
+}
+
+main {
+  scroll-behavior: smooth;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  overflow-x: hidden;
+}
+
+body{
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+u, i, strong{
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+  margin: 10px;
+  padding: 5px;
+  color: #29467f;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.title h1{
+  font-size: 5rem;
+  transition: ease 0.3s;
+}
+
+.title h1:hover{
+  color: transparent;
+  -webkit-text-stroke: 0.3px #29467f;
+}
+
+.button{
+  display: inline-block;
+  font-family: "Zilla Slab";
+  font-size: 15px;
+  margin-top: 0.5rem;
+  padding: 10px 30px;
+  color: aliceblue;
+  background-color: #9c759c;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: ease 0.3s;
+}
+
+.button:hover{
+  transform: scale(1.1);
+  color: blanchedalmond;
+  background-color: #29467f;
+  /* border: 2px solid rgb(42, 37, 68); */
+  box-shadow: 5px 10px 30px rgb(132, 172, 203, 0.4);
+  padding: 10px 30px;
+}
+
+/* meniu navigare */
+header > nav{
+  background-image: url(./images/carlos-torres-lAz3wEc_Vz8-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 3.2rem;
+}
+
+nav > ul.navigation_menu > li{
+  font-weight: 250;
+  font-size: 1em;
+}
+
+nav > ul.navigation_menu > li > ul.submenu li{
+  font-size: 0.7em;
+}
+
+nav ul{
+	list-style-type: none; /* fara numerotare sub forma de bullet points grupati bazat pe ierarhia din nav */
+}
+
+nav a{
+  font-family: "Questrial";
+  color: aliceblue;
+	text-decoration: none; /* fara subliniere */
+}
+
+nav ul, nav li{ /* fara margini default de la indentarea bazata pe ierarhie */
+	margin: 0;
+  padding: 0;
+  background-color: rgba(79, 84, 100, 0.7);
+}
+
+nav > ul.navigation_menu > li{
+  position: relative;
+}
+
+nav > ul.navigation_menu > li > ul.submenu{ /* ascundere elemente submeniu */
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 2rem; /* spatiul dintre elem din submenu si parinte */
+  transform: translateY(17px); /* din moment ce la hover peste un element parinte se schimba marimea acestuia, vom glisa in jos si elem din submenu */
+  z-index: 10;
+}
+
+nav > ul.navigation_menu > li:hover > ul.submenu{ /* elem din submeniu vor aparea la hover cu mouse-ul pe parintii lor */
+	display: block;
+}
+
+nav{
+  position: fixed;
+	top: 0;
+	left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  line-height: 3rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav > ul.navigation_menu > li{
+  transition: background-color 0.3s ease;
+	float: left;
+	width: 12.35%; /* vreau ca cele 8 sectiuni sa incapa pe un singur rand */
+	min-height: 3rem;
+	text-align: center;
+	border: 1px solid #9c759c;
+}
+
+nav > ul.navigation_menu > li:hover{
+  background-color: rgba(167, 130, 152, 0.95);
+  box-shadow: 1.5px 1.5px 5px #632c2f;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+nav > ul.navigation_menu > li:hover ~ li{ /* in momentul in care se face hover pe un elem din navigation_menu, acesta se va suprapune cu urmatorul frate, motiv pentru care voi deplasa la dreapta restul fratilor */
+  transform: translateX(3px);
+}
+
+nav ul.submenu > li{
+	width: 100%;
+  height: auto;
+	text-align: center;
+	border: 1px solid #775f6f;
+	background-color: #a78298;
+}
+
+nav > ul.navigation_menu > li:nth-child(5):hover, nav > ul.navigation_menu > li:nth-child(6):hover{
+  background-color: rgba(64, 100, 120, 0.9);
+}
+
+@media screen and (max-width: 1325px){
+  main{
+    margin-top: 30rem;
+  }
+  nav {
+    position: absolute;
+  }
+  nav > ul.navigation_menu{
+    display: flex;
+    flex-direction: column;
+  }
+  nav > ul.navigation_menu > li{
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  nav > ul.navigation_menu > li > ul.submenu{
+    position: relative;
+    top: -10px; /* pt a evita o suprapunere intre ul.submenu si urmatorul li */
+    transform: none;
+  }
+}
+
+/* sectiune introductiva what we are aiming for... */
+.text h3{
+  color: #9c759c;
+  font-size: 35px;
+  font-weight: 650;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  line-height: 2;
+  text-align: center;
+  border:0.5px solid blanchedalmond;
+}
+
+.container{
+  display: grid;
+}
+
+.row_item{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 coloane de latime egala */
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px){
+  #home .row_item{
+    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  }
+}
+
+.container_box{
+  background-color: rgba(247, 247, 247, 0.9);
+  border: 1px solid #7c7c7c;
+  border-radius: 5px;
+  padding: 50px 10px;
+  transition: all 0.7s ease 0s; /* pt toate proprietatile care se schimba se aplica o tranzitie de 0.7s; ease = tip tranzitie cu 0s delay */
+  cursor: pointer;
+}
+
+.container_box:hover{
+  transform: translateY(5px); /* translatare container_box pe axa OY in jos */
+  border: 1px solid transparent;
+  border-radius: 0px;
+  box-shadow: 5px 5px 30px rgba(25, 132, 176, 0.3); /* horizontal off set (la dreapta elementului), vertical offset (in partea de jos a elem), blur, color*/
+}
+
+#home .container_image img{
+  opacity: 0.8;
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.container_box h4{
+  font-family: "Exo 2";
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.container_box p{
+  font-family: "Zilla Slab";
+  font-size: 15px;
+  color: #777777;
+}
+
+/* al doilea copil din home a sectiunii introductive */
+#home > :nth-child(2){
+  background-image: url(./images/nenad-radojcic-JBm5eNo6B4E-unsplash.jpg); /* atentie la path-ul imaginii */
+  background-size: cover;
+  background-position: center;
+}
+
+/* geisel library home section*/
+#home .container:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  grid-template-areas:  "img intro" "caption intro";
+}
+
+.column_img{
+  grid-area: img;
+}
+
+figcaption{
+  grid-area: caption;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 98.5%; /* problema pe care ar trebui sa o rezolv */
+}
+
+#home > figure{
+  text-align: center; /* centrare figura */
+}
+
+.column_intro{
+  grid-area: intro;
+  margin-top: 40px; 
+  text-align: justify;
+}
+
+.column_intro p:nth-of-type(odd){
+  background-color: rgba(25, 132, 176, 0.1);
+}
+
+/* sectiuni overview si arhitectural aspects + generalizare meniu drop down pt summary */
+#overview > p{
+  text-align: justify;
+}
+
+#overview_summary h4[title]:hover, #arhitectural_aspects_summary h4[title]:hover{
+  transform: translateX(10px);
+  transition: ease 0.3s;
+  color: plum;
+}
+
+#overview_summary h4[title]:not(:hover), #arhitectural_aspects_summary h4[title]:not(:hover){
+  transition: ease 0.3s;
+  transform: translateY(5px);
+  color: #9c759c;
+}
+
+#overview_summary_content, .arhitectural_aspects_summary_content{
+  display: none;
+  border: 1px solid blanchedalmond;
+  color: #29467f;
+  background-image: linear-gradient(rgba(25, 132, 176, 0.1), rgba(255, 255, 255, 0.5)), url(./images/alex-lvrs-Md6_qA-BMis-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* container box arhitectural aspects */
+#arhitectural_aspects .row_item{
+  grid-template-columns: repeat(2, 1fr); /* 2 coloane pe fiecare rand */
+}
+
+@media screen and (max-width: 1450px){
+  #arhitectural_aspects .row_item{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+#arhitectural_aspects .container_image img{
+  height: 500px;
+  width: 500px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* sectiune arhitecti */
+#history{
+  background-image: url(./images/nick-iliasov-i0fCUofGjV8-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#history p, #history h4{
+  color: aliceblue;
+}
+
+#history h3{
+  color: plum;
+}
+
+#history h2{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#introduction p{
+  background-color: rgba(0, 0, 0, 0.7)
+}
+
+.row_content{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* doua colane pentru content si figura */
+  grid-gap: 20px;
+}
+
+.content{
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 2;
+  background-color: rgba(167, 130, 152, 0.7);
+}
+
+figure{
+  grid-row-start: 1; /* pt ca se afla pe acelasi rand */
+  grid-column-start: 2;
+  grid-row-end: 2;
+  grid-column-end: 3;
+}
+
+.row_content figure img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* organized gallery section */
+.gallery_content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.column_content{
+  position: relative;
+  transition: all 0.3s;
+}
+
+.column_content img{
+  height: 450px;
+  width: 100%;
+  border-radius: 15px;
+  margin: 3px;
+}
+
+.column_content h5{
+  position: absolute;
+  color: aliceblue;
+  background-color: rgba(79, 84, 100, 0.4);
+  font-size: 20px;
+  font-weight: 350;
+  left: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.column_content:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  filter: brightness(110%);
+}
+
+
+
