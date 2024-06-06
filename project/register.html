@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Brutalism, presented by Andra Alexandrescu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logo_canva.png" type="image/x-icon">
+    <link href="style_register.css" type="text/css" rel = "stylesheet">
+    <link href="style_form.css" type="text/css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jacquarda+Bastarda+9&family=Micro+5&family=Ojuju:wght@200..800&family=Questrial&family=Rajdhani:wght@300;400;500;600;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="navigation_menu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#overview">Overview</a></li>
+            <li><a href="./index.html#arhitectural_aspects">Arhitectural Aspects</a></li>
+            <li><a href="./gallery.html">Curated Collection</a></li>
+            <li><a href="./history.html">History</a></li>
+            <li><a href="./register.html">Community</a></li>
+            <li><a href="./about_me.html">About Me</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="title">
+        <h1>THE BOLD HORIZON: Exploring Brutalism</h1>
+        <h2>Try guessing as many options from the single choice quiz</h2>
+        <p>Have fun while testing your knowledge, make sure you try answering right!</p>
+        <a href="./index.html" class="button" id="go_home">Go back to the main page</a>
+    </div>
+    <div class="start">
+        <p id="date_text"></p>
+        <button class="button" id="date_and_time" onclick="display_date_time()">Click me to display current date and time</button>
+    </div>
+    <div class="quiz_container">
+        <h2 id="question_text">Unknown Question</h2>
+        <div id="choices_container">
+            <button class="button_opt">Choice 1</button>
+            <button class="button_opt">Choice 2</button>
+            <button class="button_opt">Choice 3</button>
+            <button class="button_opt">Choice 4</button>
+            <!-- daca nu tineam neaparat sa ilustrez stergerea elementelor folosind javascript, aceste butoane puteau sa fie inexistente, iar fiecare intrebare sa aiba un numar variabil de raspunsuri -->
+        </div>
+        <button id="submit_answer">Next</button>
+    </div>
+
+    <a href="#" id="redirect_form" class="button">Fill out a form</a>
+
+    <div id="form" class="modal">
+        <div class="modal_content">
+            <h2>All done, make sure to register before leaving!</h2>
+            <span class="close">&times;</span>
+            <form id="user_form" action="./about_me.html" method="GET"> <!-- metoda get; redirectionare catre about_me-->
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="script_form.js"></script>
+    <script src="script_register.js"></script>
+</main>
+</body>
+</html>

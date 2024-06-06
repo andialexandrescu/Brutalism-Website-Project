@@ -1,0 +1,139 @@
+*{
+    font-family: "Raleway";
+    font-size: 18px;
+}
+
+body{
+    background-color: lightslategray;
+}
+
+main *{
+    margin: 20px;
+}
+
+h1{
+    font-size: 50px;
+    color: blanchedalmond;
+}
+
+h2{
+    font-size: 50px;
+    color: #29467f;
+}
+
+h3{
+    font-size: 25px;
+}
+
+.title h1{
+    background-image: url(./images/about/lostin_lalin-tWjZw3dmifY-unsplash.jpg);
+    background-size: cover;
+    margin: 1rem;
+    padding: 1rem;
+    color: plum;
+    font-size: 5rem;
+    transition: ease 0.3s;
+}
+
+.title h1:hover{
+    color: transparent;
+    -webkit-text-stroke: 0.3px blanchedalmond;
+}
+
+.button#go_home{
+    display: inline-block;
+    font-family: "Zilla Slab";
+    font-size: 15px;
+    margin-top: 0.5rem;
+    padding: 10px 30px;
+    color: aliceblue;
+    background-color: #9c759c;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+  
+.button#go_home:hover{
+    transform: scale(1.1);
+    color: blanchedalmond;
+    background-color: #29467f;
+    box-shadow: 5px 10px 30px rgb(132, 172, 203, 0.4);
+    padding: 10px 30px;
+}
+  
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: aliceblue;
+}
+  
+li a{
+    color: #29467f;
+    margin-left: 0;
+    display: block;
+    text-decoration: none;
+    padding: 7px;
+}
+
+li a:hover{
+    background-color: #555;
+    color: white;
+}
+
+
+.start > button#date_and_time{
+    background-color: #9c759c;
+    border-style: none;
+    transition: ease 0.3s;
+    clear: left;
+}
+
+.start > button#date_and_time:hover{
+    transform: translateX(25px);
+}
+
+.quiz_container{
+    background-color: #fff;
+    max-width: 500px;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.button_opt{
+    background-color: aliceblue;
+    color: black;
+    text-align: left;
+    width: 90%;
+    padding: 10px;
+    transition: all 0.3s;
+    margin: 0;
+    cursor: pointer;
+}
+
+.button_opt:hover:not([disabled]){ /** in momentul in care dai hover pe orice variante de raspuns dupa ce ti-ai ales raspunsul, nu se mai schimba culoarea, din moment ce nu mai este o optiune valida **/
+    color: aliceblue;
+    background-color: #1b1b1b;
+}
+
+.button_opt:disabled{
+    cursor: no-drop;
+}
+
+button#submit_answer{
+    color: aliceblue;
+    background-color: #9c759c;
+    width: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: none; /** e ascuns inainte de a selecta o varianta de raspuns **/
+}
+
+.correct{
+    background-color: rgb(99, 167, 99);
+}
+
+.incorrect{
+    background-color: rgb(167, 79, 79);
+}

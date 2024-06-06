@@ -235,7 +235,7 @@ figcaption{
     z-index: -2;
 }
 
-/* pt a vizualiza cum arata fiecare eveniment */
+/* pt a vizualiza cum arata fiecare eveniment dupa ce elimin clear: left  din .timeline:after*/
 /*.timeline li:hover{ 
     transform: scale(1.3);
 }*/

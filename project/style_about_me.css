@@ -153,13 +153,3 @@ figure{
     color: rgba(182, 53, 118, 0.4);
     background-color: bisque;
 }
-
-#contact > button{
-    background-color: #9c759c;
-    border-style: none;
-    transition: ease 0.3s;
-}
-
-#contact > button:hover{
-    transform: translateX(25px);
-}
